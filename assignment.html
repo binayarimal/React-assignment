@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Learning Component</title>
+  </head>
+  <body>
+
+    <header id="first"></header>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+       class Greeting extends React.Component {
+         constructor(props){
+           super(props);
+           this.state={
+             lessonState : "Practicing State"
+           }
+         }
+         render() {
+           return (
+             <div>
+               <h1>Practicing Component</h1>
+               <h1> {this.props.lessonProp} </h1>
+               <h1>{this.state.lessonState}</h1>
+             </div>
+           );
+         }
+       }
+       const lesson = {
+         lesson1 : "Practicing props"
+       };
+       ReactDOM.render(
+         <Greeting lessonProp= {lesson.lesson1}/>, document.getElementById('first')
+       );
+    </script>
+  </body>
+</html>
